@@ -1,0 +1,231 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #270000;
+    color: white;
+}
+
+/* MARQUEE */
+.marquee {
+    background: rgb(245, 229, 3);
+    color: rgb(97, 3, 3);
+    padding: 10px;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee span {
+    display: inline-block;
+    animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background: rgb(58, 0, 0);
+    border-bottom: 1px solid gold;
+}
+
+nav h1 {
+    color: rgb(236, 202, 9);
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: gold;
+}
+
+/* HERO */
+.hero {
+    height: 90vh;
+    background: url('https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 50px;
+    background: rgba(80, 1, 1, 0);
+    padding: 20px;
+    border: 1px solid rgb(37, 7, 0);
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* PRODUCTS */
+.products {
+    padding: 60px;
+    text-align: center;
+}
+
+.products h2 {
+    color: rgb(48, 2, 0);
+    margin-bottom: 40px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 30px;
+}
+
+/* CARD */
+.card {
+    background: #410000;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px gold;
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 10px 0;
+}
+
+/* BUTTON */
+.card button {
+    background: linear-gradient(45deg, gold, #d4af37);
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.card button:hover {
+    opacity: 0.8;
+}
+
+/* ADD TO CART BUTTON STYLE */
+.cart-btn {
+    background: transparent;
+    color: gold;
+    border: 1px solid gold;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.cart-btn:hover {
+    background: gold;
+    color: rgb(49, 0, 0);
+}
+
+/* ABOUT */
+.about {
+    padding: 60px;
+    text-align: center;
+    background: #3d0000;
+}
+
+.about h2 {
+    color: gold;
+    margin-bottom: 20px;
+}
+
+/* CONTACT */
+.contact {
+    padding: 40px;
+    text-align: center;
+}
+
+.contact input,
+.contact textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact button {
+    background: gold;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgb(48, 0, 0);
+    border-top: 1px solid gold;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .hero h2 {
+        font-size: 30px;
+    }
+}
+
+
+

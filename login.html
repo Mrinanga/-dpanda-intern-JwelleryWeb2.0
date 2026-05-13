@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - JEWELUX</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg, #1a0000, #1d0000);
+}
+
+/* BOX */
+.container{
+    background: rgba(255,255,255,0.05);
+    padding:40px;
+    border-radius:15px;
+    width:350px;
+    text-align:center;
+    border:1px solid gold;
+}
+
+.container h2{
+    color:gold;
+    margin-bottom:20px;
+}
+
+/* INPUT */
+input, textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:6px;
+}
+
+/* TEXTAREA */
+textarea{
+    resize:none;
+    height:70px;
+}
+
+/* BUTTON */
+button{
+    width:100%;
+    padding:12px;
+    background:gold;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+button:hover{
+    background:white;
+}
+
+/* LINK */
+.link{
+    margin-top:15px;
+    color:white;
+    cursor:pointer;
+    font-size:14px;
+}
+
+.link:hover{
+    text-decoration:underline;
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div class="container" id="loginBox">
+<h2>Login</h2>
+
+<input type="text" id="loginPhone" placeholder="Phone Number">
+<input type="password" id="loginPass" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+<p class="link" onclick="showSignup()">Create New Account</p>
+</div>
+
+
+<!-- SIGNUP -->
+<div class="container" id="signupBox" style="display:none;">
+<h2>Create Account</h2>
+
+<input type="text" id="signupPhone" placeholder="Phone Number">
+<input type="email" id="signupEmail" placeholder="Email Address">
+<textarea id="signupAddress" placeholder="Address"></textarea>
+<input type="password" id="signupPass" placeholder="Password">
+
+<button onclick="signup()">Create Account</button>
+
+<p class="link" onclick="showLogin()">Already have account? Login</p>
+</div>
+
+
+<script>
+
+// SWITCH
+function showSignup(){
+    document.getElementById("loginBox").style.display = "none";
+    document.getElementById("signupBox").style.display = "block";
+}
+
+function showLogin(){
+    document.getElementById("signupBox").style.display = "none";
+    document.getElementById("loginBox").style.display = "block";
+}
+
+// SIGNUP
+function signup(){
+    let phone = document.getElementById("signupPhone").value;
+    let email = document.getElementById("signupEmail").value;
+    let address = document.getElementById("signupAddress").value;
+    let pass = document.getElementById("signupPass").value;
+
+    if(phone === "" || email === "" || address === "" || pass === ""){
+        alert("Please fill all fields ❗");
+        return;
+    }
+
+    let user = {
+        phone: phone,
+        email: email,
+        address: address,
+        password: pass
+    };
+
+    localStorage.setItem("user", JSON.stringify(user));
+
+    alert("Account Created Successfully ✅");
+    showLogin();
+}
+
+// LOGIN
+function login(){
+    let phone = document.getElementById("loginPhone").value;
+    let pass = document.getElementById("loginPass").value;
+
+    let savedUser = JSON.parse(localStorage.getItem("user"));
+
+    if(savedUser && phone === savedUser.phone && pass === savedUser.password){
+        localStorage.setItem("loggedIn","true");
+        window.location.href = "index.html";
+    } else {
+        alert("Invalid Phone or Password ❌");
+    }
+}
+
+</script>
+
+</body>
+</html>

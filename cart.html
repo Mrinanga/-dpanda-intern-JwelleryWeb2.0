@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cart</title>
+
+<link rel="stylesheet" href="cart.css">
+
+<style>
+body {
+    font-family: Arial;
+    background: #350000;
+    margin: 0;
+}
+
+/* NAVBAR */
+nav {
+    background: #111;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    background: #007bff;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* ITEM CARD */
+.item {
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.item:hover {
+    transform: scale(1.02);
+}
+
+/* BUTTONS */
+button {
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* REMOVE */
+.remove-btn {
+    background: red;
+    color: white;
+}
+
+.remove-btn:hover {
+    background: darkred;
+}
+
+/* TOTAL BOX */
+.total-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: right;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* CHECKOUT */
+.checkout-btn {
+    background: green;
+    color: white;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.checkout-btn:hover {
+    background: darkgreen;
+}
+
+/* EMPTY TEXT */
+.empty {
+    text-align: center;
+    color: gray;
+    margin-top: 50px;
+    font-size: 18px;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+    <div>🛒 Cart Page</div>
+    <div><a href="index.html">⬅ Back</a></div>
+</nav>
+
+<div class="container" id="cart-container"></div>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+let container = document.getElementById("cart-container");
+
+function displayCart() {
+    container.innerHTML = "";
+
+    if (cart.length === 0) {
+        container.innerHTML = `<div class="empty">Your cart is empty 😢</div>`;
+        return;
+    }
+
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        let price = 499; // demo price (change later)
+        total += price;
+
+        let div = document.createElement("div");
+        div.className = "item";
+
+        div.innerHTML = `
+            <span>${item} - ₹${price}</span>
+            <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+        `;
+
+        container.appendChild(div);
+    });
+
+    // TOTAL + ORDER BUTTON
+    let totalBox = document.createElement("div");
+    totalBox.className = "total-box";
+
+    totalBox.innerHTML = `
+        <h2>Total: ₹${total}</h2>
+        <button class="checkout-btn" onclick="checkout()">Place Order</button>
+    `;
+
+    container.appendChild(totalBox);
+}
+
+function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    displayCart();
+}
+
+function checkout() {
+    alert("Order placed successfully! 🎉");
+    localStorage.removeItem("cart");
+    displayCart();
+}
+
+displayCart();
+</script>
+
+</body>
+</html>

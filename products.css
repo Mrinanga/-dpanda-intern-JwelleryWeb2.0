@@ -1,0 +1,128 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #490000;
+    color: white;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background: rgb(66, 0, 0);
+    border-bottom: 1px solid gold;
+}
+
+nav h1 {
+    color: rgb(252, 227, 5);
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(252, 251, 251);
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: rgb(230, 199, 0);
+}
+
+/* PRODUCTS SECTION */
+.products {
+    padding: 60px;
+    text-align: center;
+}
+
+.products h2 {
+    color: rgb(255, 217, 0);
+    margin-bottom: 40px;
+    font-size: 32px;
+}
+
+/* GRID */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 30px;
+}
+
+/* CARD */
+.card {
+    background: #111;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px gold;
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 15px 0;
+}
+
+/* BUTTON */
+.cart-btn {
+    background: transparent;
+    color: rgb(248, 244, 11);
+    border: 1px solid gold;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.cart-btn:hover {
+    background: rgb(141, 122, 12);
+    color: black;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: black;
+    border-top: 1px solid rgb(141, 124, 30);
+    margin-top: 40px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .products {
+        padding: 30px;
+    }
+}

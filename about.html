@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - JEWELUX</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a0000, #4b0000);
+    color: white;
+}
+
+/* NAVBAR (THEME MATCHED) */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: linear-gradient(135deg, #1a0000, #4b0000);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+}
+
+.logo {
+    color: gold;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: gold;
+}
+
+/* ACTIVE PAGE */
+.active {
+    color: gold;
+    font-weight: bold;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    animation: fadeIn 1.5s ease;
+}
+
+.hero h1 {
+    font-size: 50px;
+}
+
+.hero p {
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+/* ABOUT */
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 60px;
+    align-items: center;
+    justify-content: center;
+}
+
+.about img {
+    width: 320px;
+    border-radius: 15px;
+    margin: 20px;
+    box-shadow: 0 0 25px rgba(255,0,0,0.6);
+    transition: 0.4s;
+}
+
+.about img:hover {
+    transform: scale(1.05);
+}
+
+.about-text {
+    max-width: 500px;
+    margin: 20px;
+}
+
+.about-text h2 {
+    margin-bottom: 15px;
+    font-size: 32px;
+}
+
+.about-text p {
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+/* FEATURES */
+.features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
+.feature-box {
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 15px;
+    width: 260px;
+    margin: 15px;
+    text-align: center;
+    transition: 0.4s;
+    backdrop-filter: blur(10px);
+}
+
+.feature-box:hover {
+    transform: translateY(-10px) scale(1.03);
+    background: rgba(255,0,0,0.3);
+}
+
+.feature-box h3 {
+    margin-bottom: 10px;
+}
+
+/* STATS */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 50px;
+    background: rgba(0,0,0,0.4);
+}
+
+.stat {
+    text-align: center;
+    margin: 15px;
+}
+
+.stat h2 {
+    font-size: 40px;
+    color: gold;
+}
+
+/* TEAM */
+.team {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.team h2 {
+    margin-bottom: 30px;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.member {
+    margin: 15px;
+}
+
+.member img {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* CTA */
+.cta {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.cta button {
+    padding: 15px 30px;
+    border: none;
+    background: red;
+    color: white;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta button:hover {
+    background: gold;
+    color: black;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: black;
+    margin-top: 30px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">JEWELUX</div>
+    <ul>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="products.html" class="nav-link">Products</a></li>
+        <li><a href="about.html" class="nav-link active">About</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>About JEWELUX</h1>
+    <p>Luxury Jewellery crafted with passion & perfection 💎</p>
+</div>
+
+<!-- ABOUT -->
+<div class="about">
+    <img src="https://housing.com/news/wp-content/uploads/2024/02/Best-jewellery-shops-in-Delhi-f.jpg" alt="Jewellery">
+
+    <div class="about-text">
+        <h2>Who We Are</h2>
+        <p>
+            JEWELUX is a premium jewellery brand dedicated to elegance,
+            luxury, and perfection. We blend modern trends with timeless
+            craftsmanship to create stunning pieces that define your style.
+        </p>
+    </div>
+</div>
+
+<!-- FEATURES -->
+<div class="features">
+    <div class="feature-box">
+        <h3>💎 Premium Quality</h3>
+        <p>Only the finest materials used</p>
+    </div>
+
+    <div class="feature-box">
+        <h3>✨ Unique Designs</h3>
+        <p>Exclusive & trendy collections</p>
+    </div>
+
+    <div class="feature-box">
+        <h3>🚚 Fast Delivery</h3>
+        <p>Safe & quick shipping</p>
+    </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+    <div class="stat">
+        <h2>10K+</h2>
+        <p>Happy Customers</p>
+    </div>
+    <div class="stat">
+        <h2>500+</h2>
+        <p>Designs</p>
+    </div>
+    <div class="stat">
+        <h2>5⭐</h2>
+        <p>Customer Rating</p>
+    </div>
+</div>
+
+<!-- TEAM -->
+<div class="team">
+    <h2>Our Team</h2>
+    <div class="team-members">
+        <div class="member">
+            <img src="https://i.pravatar.cc/150?img=1">
+            <p>Founder</p>
+        </div>
+        <div class="member">
+            <img src="https://i.pravatar.cc/150?img=2">
+            <p>Designer</p>
+        </div>
+        <div class="member">
+            <img src="https://i.pravatar.cc/150?img=3">
+            <p>Manager</p>
+        </div>
+    </div>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+    <h2>Explore Our Collection</h2>
+    <br>
+    <button onclick="window.location.href='products.html'">Shop Now</button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 JEWELUX | All Rights Reserved
+</footer>
+
+</body>
+</html>

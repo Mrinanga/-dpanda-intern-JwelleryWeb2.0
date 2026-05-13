@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact | JEWELUX</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#0f172a;
+    --gradient:linear-gradient(135deg,#3b0000,#3d0000);
+    --glass:rgba(255,255,255,0.05);
+    --text:#cbd5f5;
+    --gold:#facc15;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:var(--bg);
+    color:white;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 60px;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+}
+
+nav h2{
+    color:var(--gold);
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav a{
+    color:var(--text);
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:white;
+}
+
+nav a.active{
+    color:var(--gold);
+    border-bottom:2px solid var(--gold);
+}
+
+/* SECTION */
+.section{
+    min-height:100vh;
+    padding:120px 20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:var(--gradient);
+}
+
+/* CONTAINER */
+.container{
+    max-width:1000px;
+    width:100%;
+    background:var(--glass);
+    padding:40px;
+    border-radius:15px;
+    backdrop-filter: blur(10px);
+    box-shadow:0 0 25px rgba(0,0,0,0.5);
+}
+
+/* GRID */
+.wrapper{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+/* LEFT */
+.left h1{
+    color:var(--gold);
+    margin-bottom:15px;
+}
+
+.left p{
+    color:var(--text);
+    margin-bottom:20px;
+}
+
+.info p{
+    margin:10px 0;
+}
+
+/* FORM */
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input, textarea{
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#1e293b;
+    color:white;
+    outline:none;
+}
+
+input:focus, textarea:focus{
+    border:1px solid var(--gold);
+}
+
+textarea{
+    height:120px;
+}
+
+/* BUTTON */
+button{
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:linear-gradient(90deg,#facc15,#eab308);
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:15px;
+    background:#000;
+    color:#aaa;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+    .wrapper{
+        grid-template-columns:1fr;
+    }
+
+    nav{
+        padding:15px 20px;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h2>JEWELUX</h2>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- CONTACT SECTION -->
+<section class="section">
+    <div class="container">
+        <div class="wrapper">
+
+            <!-- LEFT SIDE -->
+            <div class="left">
+                <h1>Contact Us 💎</h1>
+                <p>Have questions or want custom jewelry?  
+                We are here to help you anytime.</p>
+
+                <div class="info">
+                    <p>📍 Guwahati, Assam</p>
+                    <p>📞 +91 9876543210</p>
+                    <p>📧 jewelryshop@email.com</p>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE FORM -->
+            <div>
+                <form onsubmit="sendMsg(event)">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                    <textarea placeholder="Your Message"></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 JEWELUX | Luxury Jewelry
+</footer>
+
+<script>
+function sendMsg(e){
+    e.preventDefault();
+    alert("✅ Message Sent Successfully!");
+}
+</script>
+
+</body>
+</html>
